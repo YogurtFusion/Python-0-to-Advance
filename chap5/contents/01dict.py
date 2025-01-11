@@ -6,3 +6,19 @@ marks = {
 
 print(marks, type(marks))
 print(marks["harry"])
+
+# hero= {
+#     354 ,
+#     2345,
+#     2345,
+# }
+# print(type(hero))
+
+
+h = {"kuch🪴": 345,
+     "harrt😍": 4523,
+     "Slike🎶": 345
+     
+}
+print(h["kuch🪴"])
+print(type(h))
