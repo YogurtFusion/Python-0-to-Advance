@@ -1,13 +1,18 @@
 import random
+
 '''
 1 is for snake
 -1 is for water
 0 is for gun 
 '''
+
+# Generate computer's choice
 computer = random.choice([-1, 0, 1])
-youstr = input("Enter your choice: ").lower()
+
+# Get user input
+youstr = input("Enter your choice (s for Snake, g for Gun, w for Water): ").lower()
 youdict = {"s": 1, "g": 0, "w": -1}
-reverseDict = {1: "Snake", 0: "Water", -1: "Gun"}
+reverseDict = {1: "Snake", 0: "Gun", -1: "Water"}
 
 # Validate user input
 if youstr not in youdict:
@@ -16,39 +21,28 @@ if youstr not in youdict:
 
 you = youdict[youstr]
 
-# by now we've two variables you and computer
-print(f"you choose {reverseDict[you]}\ncomputer choose {reverseDict[computer]}")
+# Display choices
+print(f"You chose {reverseDict[you]}\nComputer chose {reverseDict[computer]}")
 
-if (computer == you):
-    print("its a draw")
-
+# Check result
+if computer == you:
+    print("It's a draw!")
 else:
-    if((computer - you) == -1 or (computer - you) == 2 ):
-        print("you lose!!!")
+    if computer == -1 and you == 1:
+        print("You won!!!")
+    elif computer == -1 and you == 0:
+        print("You lose!!!")
+    elif computer == 1 and you == -1:
+        print("You lose!!!")
+    elif computer == 1 and you == 0:
+        print("You win!!!")
+    elif computer == 0 and you == -1:
+        print("You won!!!")
+    elif computer == 0 and you == 1:
+        print("You lose!!!")
     else:
-        print("you win!!!")
+        print("Something went wrong!")
 
-
-
-    # if(computer == -1 and you == 1):
-    #     print("you won!!!")
-    
-    # elif(computer ==-1 and you == 0):
-    #     print("you loose!!!")
-    
-    # elif(computer == 1 and you == -1):
-    #     print("you loose!!!")
-    
-    # elif(computer == 1 and you == 0):
-    #     print("you win!!!")
-    
-    # elif(computer == 0 and you == -1):
-    #     print("you won!!!")
-    
-    # elif(computer == 0 and you == 1):
-    #     print("you loose!!!")
-    
-    # else:
-    #     print("something error")
+        print("something error")
 
         
